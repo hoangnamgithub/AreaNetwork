@@ -1,0 +1,63 @@
+SB ov 1537 ev 2 rid General-0-20241125-09:26:12-6076
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t areanetwork.simulations.ComputerNetwork n ComputerNetwork cm 1
+MDC id 1 d ""
+MC id 2 c Computer t areanetwork.Computer pid 1 n computer_A
+GC m 2 g 0 n port$i o 0
+GC m 2 g 1 n port$o o 1
+MDC id 2 d p=90,140;i=misc/drone
+MC id 3 c Computer t areanetwork.Computer pid 1 n computer_B
+GC m 3 g 0 n port$i o 0
+GC m 3 g 1 n port$o o 1
+MDC id 3 d p=310,150
+CC sm 2 sg 1 dm 3 dg 0
+CC sm 3 sg 1 dm 2 dg 0
+CMB sm 1 tm 2 m initialize(0)
+CM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n "" pe -1
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n "" m 2 pe 0
+SH sm 2 sg 1
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n "" sm 2 sg 1 st 0 am 3 ag 0 at 0 pe 0
+CL id 1 tid 0 eid 1 etid 0 c omnetpp::cMessage n "" m 2 pe -1 cid 0
+CME
+CMB sm 1 tm 3 m initialize(0)
+CM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n "" pe -1
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n "" m 3 pe 0
+SH sm 3 sg 1
+ES id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n "" sm 3 sg 1 st 0 am 2 ag 0 at 0 pe 0
+CL id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n "" m 3 pe -1 cid 1
+CME
+
+E # 1 t 0 m 3 ce 0 msg 0
+CM id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n "" pe -1
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n "" m 3 pe 1 sd 37.440675115213
+SH sm 3 sg 1
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n "" sm 3 sg 1 st 37.440675115213 am 2 ag 0 at 37.440675115213 pe 1
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n "" m 3 pe -1 cid 2
+- INFO: Message Received
+
+E # 2 t 0 m 2 ce 0 msg 1
+CM id 3 tid 3 eid 3 etid 3 c omnetpp::cMessage n "" pe -1
+BS id 3 tid 3 eid 3 etid 3 c omnetpp::cMessage n "" m 2 pe 2 sd 39.642230819445
+SH sm 2 sg 1
+ES id 3 tid 3 eid 3 etid 3 c omnetpp::cMessage n "" sm 2 sg 1 st 39.642230819445 am 3 ag 0 at 39.642230819445 pe 2
+CL id 4 tid 3 eid 4 etid 3 c omnetpp::cMessage n "" m 2 pe -1 cid 3
+- INFO: Message Received
+
+E # 3 t 37.440675115213 m 2 ce 1 msg 2
+CM id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n "" pe -1
+BS id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n "" m 2 pe 3 sd 45.75946824858
+SH sm 2 sg 1
+ES id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n "" sm 2 sg 1 st 83.200143363793 am 3 ag 0 at 83.200143363793 pe 3
+CL id 5 tid 4 eid 5 etid 4 c omnetpp::cMessage n "" m 2 pe -1 cid 4
+- INFO: Message Received
+
+E # 4 t 39.642230819445 m 3 ce 2 msg 3
+CM id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n "" pe -1
+BS id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n "" m 3 pe 4 sd 52.213287204504
+SH sm 3 sg 1
+ES id 5 tid 5 eid 5 etid 5 c omnetpp::cMessage n "" sm 3 sg 1 st 91.855518023949 am 2 ag 0 at 91.855518023949 pe 4
+CL id 6 tid 5 eid 6 etid 5 c omnetpp::cMessage n "" m 3 pe -1 cid 5
+- INFO: Message Received
+
+SE e 0 c 10 m "The user has finished the simulation -- at t=39.642230819445s, event #4"

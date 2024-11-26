@@ -1,0 +1,27 @@
+version 3
+run General-0-20241125-09:26:12-6076
+attr configname General
+attr datetime 20241125-09:26:12
+attr datetimef 20241125-092612
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ComputerNetwork
+attr processid 6076
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../inet4.5/images
+config network ComputerNetwork
+config record-eventlog true
+config sim-time-limit 500s
+
+par ComputerNetwork.computer_A typename "\"areanetwork.Computer\""
+par ComputerNetwork.computer_B typename "\"areanetwork.Computer\""
+par ComputerNetwork typename "\"areanetwork.simulations.ComputerNetwork\""
+
